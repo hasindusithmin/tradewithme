@@ -1,6 +1,6 @@
 {
-  "short_name": "Trade with me",
-  "name": "Risk comes from not knowing what you're doing.",
+  "short_name": "TWM",
+  "name": "tradewithme",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
