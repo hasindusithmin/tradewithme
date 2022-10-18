@@ -10,22 +10,15 @@ import Indices from "./pages/Indices";
 import Stocks from "./pages/Stocks";
 
 
-
-
-
-
-
-
-
-
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>
           <Route index element={<Home />} />
           <Route path="bitcoin" element={<Bitcoin />} />
           <Route path="commodities" element={<Commodities />} />
-          <Route path="crypto" element={<Crypto />} />
+          <Route path="crypto" element={<Crypto itemsPerPage={5} />} />
           <Route path="currencies" element={<Currencies />} />
           <Route path="indices" element={<Indices />} />
           <Route path="stocks" element={<Stocks />} />
