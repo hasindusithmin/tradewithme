@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-
+import Item from '../components/Item';
 function Items({ currentItems }) {
     return (
         <>
-            {currentItems &&
-                currentItems.map((item) => (
-                    <div key={item}>
-                        <h3>Item #{item}</h3>
-                    </div>
-                ))}
+            {currentItems && currentItems.map(({ title, description, pubDate, image }) => <Item key={title} title={title} description={description} pubDate={pubDate} image={image} /> )}
         </>
-    );
+    )
 }
 
 export default function Crypto({ itemsPerPage }) {
@@ -26,12 +21,12 @@ export default function Crypto({ itemsPerPage }) {
             setCurrentItems(items.slice(itemOffset, endOffset));
             setPageCount(Math.ceil(items.length / itemsPerPage));
         }
-    }, [itemOffset, itemsPerPage,items]);
-    useEffect(()=>{
-        setTimeout(()=>{
-            setItems([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
-        },1500)
-    },[])
+    }, [itemOffset, itemsPerPage, items]);
+    useEffect(() => {
+        fetch('https://tradingideas.deta.dev/crypto')
+            .then(res => res.json())
+            .then(data => { setItems(data) })
+    }, [])
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % items.length;
@@ -42,21 +37,30 @@ export default function Crypto({ itemsPerPage }) {
     };
 
     return (
-        <>
+        <div className="w3-main w3-content w3-padding" style={{ maxWidth: '1200px', marginTop: '100px' }}>
             {
                 items
                 &&
                 <>
+                    <div className='w3-opacity w3-center'>
+                        <h1><b>CRYPTO</b></h1>
+                    </div>
                     <Items currentItems={currentItems} />
-                    <ReactPaginate
-                    breakLabel="..."
-                    nextLabel="next >"
-                    onPageChange={handlePageClick}
-                    pageRangeDisplayed={5}
-                    pageCount={pageCount}
-                    previousLabel="< previous"
-                    renderOnZeroPageCount={null}
-                    />
+                    <div className='w3-center'>
+                        <ReactPaginate
+                            breakLabel="..."
+                            nextLabel="»"
+                            onPageChange={handlePageClick}
+                            pageRangeDisplayed={5}
+                            pageCount={pageCount}
+                            previousLabel="«"
+                            renderOnZeroPageCount={null}
+                            className="w3-bar w3-padding-16"
+                            pageClassName="w3-bar-item w3-button w3-hover-black"
+                            previousClassName='w3-bar-item w3-button w3-hover-black'
+                            nextClassName='w3-bar-item w3-button w3-hover-black'
+                        />
+                    </div>
                 </>
             }
             {
@@ -64,6 +68,6 @@ export default function Crypto({ itemsPerPage }) {
                 &&
                 <div>Loading ...</div>
             }
-        </>
+        </div>
     );
 }
