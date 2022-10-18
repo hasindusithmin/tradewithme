@@ -8,6 +8,7 @@ import Crypto from "./pages/Crypto";
 import Currencies from "./pages/Currencies";
 import Indices from "./pages/Indices";
 import Stocks from "./pages/Stocks";
+import Notfound from "./pages/Notfound";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="currencies" element={<Currencies itemsPerPage={5} />} />
           <Route path="indices" element={<Indices itemsPerPage={5} />} />
           <Route path="stocks" element={<Stocks itemsPerPage={5} />} />
+          <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>
   );
