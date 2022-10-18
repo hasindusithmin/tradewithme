@@ -11,17 +11,17 @@ import Stocks from "./pages/Stocks";
 
 
 function App() {
-  
+
   return (
     <BrowserRouter>
       <Routes>
           <Route index element={<Home />} />
-          <Route path="bitcoin" element={<Bitcoin />} />
-          <Route path="commodities" element={<Commodities />} />
+          <Route path="bitcoin" element={<Bitcoin itemsPerPage={5} />} />
+          <Route path="commodities" element={<Commodities itemsPerPage={5}/>} />
           <Route path="crypto" element={<Crypto itemsPerPage={5} />} />
-          <Route path="currencies" element={<Currencies />} />
-          <Route path="indices" element={<Indices />} />
-          <Route path="stocks" element={<Stocks />} />
+          <Route path="currencies" element={<Currencies itemsPerPage={5} />} />
+          <Route path="indices" element={<Indices itemsPerPage={5} />} />
+          <Route path="stocks" element={<Stocks itemsPerPage={5} />} />
       </Routes>
     </BrowserRouter>
   );
