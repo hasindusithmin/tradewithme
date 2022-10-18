@@ -3,7 +3,7 @@ import contact from "../contact.jpg"
 export default function Contact() {
     return (
         <div className="w3-content" style={{ maxWidth: '700px' }}>
-            <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">WHERE TO FIND US</span></h5>
+            <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">CONTACT US</span></h5>
             <p>Find us at some address at some place.</p>
             <img src={contact} alt="Contact us" className="w3-image" style={{ width: '100%' }} />
             <p><span className="w3-tag">FYI!</span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney.</p>

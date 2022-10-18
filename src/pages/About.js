@@ -11,6 +11,7 @@ export default function About() {
                 <p>Chairperson of Berkshire Hathaway: Warren Buffett</p>
             </div>
             <img src={dosomethinggreat} alt="About us" style={{width:'100%',maxWidth:'1000px'}} className="w3-margin-top"/>
+            <div className="w3-padding"></div>
         </div>
     )
 }

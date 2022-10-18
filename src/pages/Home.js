@@ -11,7 +11,7 @@ export default function Home() {
                 </div>
             </header>
             <div className="w3-container w3-content w3-center w3-padding-64" style={{maxWidth:'800px'}}>
-                <h2 className="w3-wide">FOR TRADERS</h2>
+                <h2 className="w3-wide w3-text-grey"><b>FOR TRADERS</b></h2>
                 <p className="w3-opacity"><i>We love trading</i></p>
                 <p className="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -21,7 +21,7 @@ export default function Home() {
                         <img src="https://via.placeholder.com/255/808080/ffffff?text=Bitcoin" className="w3-round w3-margin-bottom" alt="Random Name" style={{width:'60%'}} />
                     </div>
                     <div className="w3-third">
-                        <p><Link to='/crypyo'>Crypyo</Link></p>
+                        <p><Link to='/crypto'>Crypyo</Link></p>
                         <img src="https://via.placeholder.com/255/808080/ffffff?text=Crypyo" className="w3-round w3-margin-bottom" alt="Random Name" style={{width:'60%'}}/>
                     </div>
                     <div className="w3-third">
