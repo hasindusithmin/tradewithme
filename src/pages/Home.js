@@ -1,8 +1,8 @@
 
 export default function Home() {
     return (
-        <div className="w3-main w3-content w3-padding" style={{ maxWidth: '1200px', marginTop: '100px' }}>
-            hello
+        <div className="w3-content" style={{ maxWidth: '700px' }}>
+            
         </div>
     )
 }
