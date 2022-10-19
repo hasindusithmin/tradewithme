@@ -1,3 +1,3 @@
 # tradewithme
 
-[web](tradewithme.vercel.app)
+[web](https://tradewithme.vercel.app)
