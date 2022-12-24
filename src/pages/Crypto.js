@@ -34,6 +34,7 @@ export default function Crypto({ itemsPerPage }) {
             `User requested page number ${event.selected}, which is offset ${newOffset}`
         );
         setItemOffset(newOffset);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
 
     return (
@@ -59,6 +60,7 @@ export default function Crypto({ itemsPerPage }) {
                             pageClassName="w3-bar-item w3-button w3-hover-black"
                             previousClassName='w3-bar-item w3-button w3-hover-black'
                             nextClassName='w3-bar-item w3-button w3-hover-black'
+                            activeClassName='w3-bar-item w3-button w3-green'
                         />
                     </div>
                 </>

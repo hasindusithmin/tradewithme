@@ -1,51 +1,101 @@
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import ideas from "../ideas.jpg"
+import bitcoin from "./gifs/bitcoin.gif"
+import commodities from "./gifs/commodities.gif"
+import currencies from "./gifs/currencies.gif"
+import crypto from "./gifs/crypto.gif"
+import indices from "./gifs/indices.gif"
+import stocks from "./gifs/stocks.gif"
 
 export default function Home() {
+
+
+    var slideIndex = 0;
+    setTimeout(()=>{
+        carousel();
+    },1000)
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("slideshow");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) { slideIndex = 1 }
+        x[slideIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000);
+    }
+
+    const navigate = useNavigate()
+
+    const render = (asset) => {
+        navigate(`/${asset}`)
+    }
+
     return (
         <>
             <header className="w3-display-container w3-content w3-wide" style={{ maxWidth: '1500px' }}>
                 <img className="w3-image w3-grayscale-max" src={ideas} alt="Ideas" width="1500" height="800" />
                 <div className="w3-display-middle w3-margin-top w3-center">
-                    <h1 className="w3-xxlarge w3-text-white"><span className="w3-padding w3-black w3-opacity-min"><b>TRADING</b></span> <span className="w3-text-white"><b>IDEAS</b></span></h1>
+                    <h1 className="w3-xxlarge w3-text-white"><span className="w3-padding w3-black w3-opacity-min w3-animate-fading"><b>TRADING</b></span> <span className="w3-text-white"><b>IDEAS</b></span></h1>
                 </div>
             </header>
-            <div className="w3-container w3-content w3-center w3-padding-64" style={{maxWidth:'800px'}}>
-                <h2 className="w3-wide w3-text-grey"><b>FOR TRADERS</b></h2>
-                <p className="w3-opacity"><i>We love trading</i></p>
-                <p className="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div className="w3-container w3-content w3-center w3-padding-64" style={{ maxWidth: '800px' }}>
+                <h2 className="w3-wide w3-text-grey"><b>TRADING IDEAS</b></h2>
+                <p className="w3-justify w3-large">
+                    Get the latest and most profitable trading ideas for bitcoin, commodities, crypto, currencies, indices, and stocks – all in one place.
+                </p>
                 <div className="w3-row w3-padding-32">
                     <div className="w3-third">
-                        <p><Link to='/bitcoin'>Bitcoin</Link></p>
-                        <img src="https://via.placeholder.com/255/808080/ffffff?text=Bitcoin" className="w3-round w3-margin-bottom" alt="Random Name" style={{width:'60%'}} />
+                        <img src={bitcoin} className="w3-round w3-margin-bottom" alt="bitcoin" title="bitcoin" style={{ width: '60%' }} onClick={() => { render('bitcoin') }} />
+                        <div>BITCOIN</div>
                     </div>
                     <div className="w3-third">
-                        <p><Link to='/crypto'>Crypyo</Link></p>
-                        <img src="https://via.placeholder.com/255/808080/ffffff?text=Crypyo" className="w3-round w3-margin-bottom" alt="Random Name" style={{width:'60%'}}/>
+                        <img src={crypto} className="w3-round w3-margin-bottom" alt="crypto" title="crypto" style={{ width: '60%' }} onClick={() => { render('crypto') }} />
+                        <div>CRYPTO</div>
                     </div>
                     <div className="w3-third">
-                        <p><Link to='/stocks'>Stocks</Link></p>
-                        <img src="https://via.placeholder.com/255/808080/ffffff?text=Stocks" className="w3-round" alt="Random Name" style={{width:'60%'}} />
+                        <img src={stocks} className="w3-round" alt="stocks" title="stocks" style={{ width: '60%' }} onClick={() => { render('stocks') }} />
+                        <div>STOCKS</div>
                     </div>
                 </div>
                 <div className="w3-row w3-padding-32">
                     <div className="w3-third">
-                        <p><Link to='/commodities'>Commodities</Link></p>
-                        <img src="https://via.placeholder.com/255/808080/ffffff?text=Commodities" className="w3-round w3-margin-bottom" alt="Random Name" style={{width:'60%'}} />
+                        <img src={commodities} className="w3-round w3-margin-bottom" alt="commodities" title="commodities" style={{ width: '60%' }} onClick={() => { render('commodities') }} />
+                        <div>COMMODITIES</div>
                     </div>
                     <div className="w3-third">
-                        <p><Link to='/currencies'>Currencies</Link></p>
-                        <img src="https://via.placeholder.com/255/808080/ffffff?text=Currencies" className="w3-round w3-margin-bottom" alt="Random Name" style={{width:'60%'}}/>
+                        <img src={currencies} className="w3-round w3-margin-bottom" alt="currencies" title="currencies" style={{ width: '60%' }} onClick={() => { render('currencies') }} />
+                        <div>CURRENCIES</div>
                     </div>
                     <div className="w3-third">
-                        <p><Link to='/indices'>Indices</Link></p>
-                        <img src="https://via.placeholder.com/255/808080/ffffff?text=Indices" className="w3-round" alt="Random Name" style={{width:'60%'}} />
+                        <img src={indices} className="w3-round" alt="indices" title="indices" style={{ width: '60%' }} onClick={() => { render('indices') }} />
+                        <div>INDICES</div>
                     </div>
                 </div>
             </div>
-            <footer className="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-                <p className="w3-medium">Powered by <a href="https://vercel.com/" rel="noreferrer" target="_blank">vercel</a></p>
+            <footer className="w3-content">
+                <div className="slideshow w3-panel w3-leftbar w3-light-grey">
+                    <p className="w3-serif"><i>"In the business of trading, the market is the game and the players are the pieces."</i></p>
+                    <p>Jesse Livermore</p>
+                </div>
+                <div className="slideshow w3-panel w3-leftbar w3-light-grey">
+                    <p className="w3-serif"><i>"The market is a battle between buyers and sellers. The price you paid or received is a consequence of the battle."</i></p>
+                    <p> Marty Schwartz</p>
+                </div>
+                <div className="slideshow w3-panel w3-leftbar w3-light-grey">
+                    <p className="w3-serif"><i>"The stock market is a device for transferring money from the impatient to the patient."</i></p>
+                    <p>Warren Buffett</p>
+                </div>
+                <div className="slideshow w3-panel w3-leftbar w3-light-grey">
+                    <p className="w3-serif"><i>"Markets are constantly in a state of uncertainty and flux and money is made by discounting the obvious and betting on the unexpected."</i></p>
+                    <p>George Soros</p>
+                </div>
+                <div className="slideshow w3-panel w3-leftbar w3-light-grey">
+                    <p className="w3-serif"><i>"Trading is a game of probabilities and it's about finding the edge and then exploiting it."</i></p>
+                    <p>Paul Tudor Jones</p>
+                </div>
             </footer>
         </>
     )

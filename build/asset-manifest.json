@@ -1,19 +1,24 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.a3070a18.js",
+    "main.js": "/static/js/main.2a01d406.js",
     "static/js/787.7e1cff13.chunk.js": "/static/js/787.7e1cff13.chunk.js",
+    "static/media/indices.gif": "/static/media/indices.cefbb3019cfe9791cc8a.gif",
+    "static/media/currencies.gif": "/static/media/currencies.07c73f9f2ec11eaa30c2.gif",
+    "static/media/crypto.gif": "/static/media/crypto.636be18f8ca97136bee6.gif",
+    "static/media/bitcoin.gif": "/static/media/bitcoin.126c80461810c49548e1.gif",
+    "static/media/commodities.gif": "/static/media/commodities.8e553e89093641035901.gif",
+    "static/media/stocks.gif": "/static/media/stocks.4fa3b04ddb871660d806.gif",
     "static/media/ideas.jpg": "/static/media/ideas.54bf2e186e914d64db25.jpg",
     "service-worker.js": "/service-worker.js",
-    "static/media/contact.jpg": "/static/media/contact.6914601348f1e3ec6f61.jpg",
     "static/media/about.jpg": "/static/media/about.eb8e8dbc840161ce96c9.jpg",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.a3070a18.js.map": "/static/js/main.a3070a18.js.map",
+    "main.2a01d406.js.map": "/static/js/main.2a01d406.js.map",
     "787.7e1cff13.chunk.js.map": "/static/js/787.7e1cff13.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.a3070a18.js"
+    "static/js/main.2a01d406.js"
   ]
 }
